@@ -10,10 +10,10 @@ export default function Page({ page }) {
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
-export async function getStaticProps({ previewData }) {
-  const client = createClient({ previewData });
+export async function getStaticProps() {
+  const client = createClient();
 
-  const page = await client.getByID("ZD_6gxAAACMAof8a");
+  const page = await client.getSingle("homepage");
 
   return {
     props: {

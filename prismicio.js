@@ -25,6 +25,8 @@ const routes = [
  */
 export const createClient = (config = {}) => {
   const client = prismic.createClient(sm.apiEndpoint, {
+    accessToken:
+      process.env.ACCESS_TOKEN,
     routes,
     ...config,
   });
