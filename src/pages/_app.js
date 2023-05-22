@@ -3,12 +3,14 @@ import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../../prismicio";
 
-import "router/styles/globals.css";
+import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
+  return (
   <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
     <PrismicPreview repositoryName={repositoryName}>
-      return <Component {...pageProps} />
+      <Component {...pageProps} />
     </PrismicPreview>
-  </PrismicProvider>;
+  </PrismicProvider>
+  )
 }
