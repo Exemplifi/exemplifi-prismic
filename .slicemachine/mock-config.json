@@ -1,0 +1,17 @@
+{
+  "slices": {
+    "Notification": {
+      "default": {
+        "items": {}
+      }
+    },
+    "Ratings": {
+      "default": {
+        "primary": {}
+      }
+    }
+  },
+  "_cts": {
+    "homepage": {}
+  }
+}

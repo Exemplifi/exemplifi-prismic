@@ -31,18 +31,18 @@ const Landing = ({ slice }) => (
         </svg>
         <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
           {slice.primary.title ? (
-            <PrismicRichText
-              field={slice.primary.title}
-            />
+            <span className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <PrismicRichText field={slice.primary.title} />
+            </span>
           ) : (
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Template slice, update me!
             </h2>
           )}
           {slice.primary.description ? (
-            <PrismicRichText
-              field={slice.primary.description}
-            />
+            <span className="mt-6 text-lg leading-8 text-gray-300">
+              <PrismicRichText field={slice.primary.description} />
+            </span>
           ) : (
             <p className="mt-6 text-lg leading-8 text-gray-300">
               start by editing this slice from inside Slice Machine!

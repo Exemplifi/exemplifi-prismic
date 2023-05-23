@@ -1,0 +1,44 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "satisfied_percent": {
+        "__TYPE__": "FieldContent",
+        "value": "pocket",
+        "type": "Text"
+      },
+      "satisfied_text": {
+        "__TYPE__": "FieldContent",
+        "value": "bark",
+        "type": "Text"
+      },
+      "neutral_percent": {
+        "__TYPE__": "FieldContent",
+        "value": "curve",
+        "type": "Text"
+      },
+      "neutral_text": {
+        "__TYPE__": "FieldContent",
+        "value": "tree",
+        "type": "Text"
+      },
+      "unsatisfied_percent": {
+        "__TYPE__": "FieldContent",
+        "value": "treated",
+        "type": "Text"
+      },
+      "unsatisfied_text": {
+        "__TYPE__": "FieldContent",
+        "value": "obtain",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

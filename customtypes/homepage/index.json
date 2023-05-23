@@ -12,6 +12,12 @@
           "choices": {
             "landing": {
               "type": "SharedSlice"
+            },
+            "notification": {
+              "type": "SharedSlice"
+            },
+            "ratings": {
+              "type": "SharedSlice"
             }
           }
         }
