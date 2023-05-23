@@ -33,7 +33,6 @@ const Landing = ({ slice }) => (
           {slice.primary.title ? (
             <PrismicRichText
               field={slice.primary.title}
-              className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
             />
           ) : (
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -43,7 +42,6 @@ const Landing = ({ slice }) => (
           {slice.primary.description ? (
             <PrismicRichText
               field={slice.primary.description}
-              className="mt-6 text-lg leading-8 text-gray-300"
             />
           ) : (
             <p className="mt-6 text-lg leading-8 text-gray-300">
