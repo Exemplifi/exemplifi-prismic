@@ -18,6 +18,12 @@
             },
             "ratings": {
               "type": "SharedSlice"
+            },
+            "log_in": {
+              "type": "SharedSlice"
+            },
+            "sign_out": {
+              "type": "SharedSlice"
             }
           }
         }

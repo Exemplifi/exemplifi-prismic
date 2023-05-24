@@ -24,7 +24,7 @@ interface HomepageDocumentData {
  * Slice for *Home Page → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | RatingsSlice;
+type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | RatingsSlice | LogInSlice | SignOutSlice;
 /**
  * Home Page document from Prismic
  *
@@ -302,11 +302,60 @@ type RatingsSliceVariation = RatingsSliceDefault;
  *
  */
 export type RatingsSlice = prismicT.SharedSlice<"ratings", RatingsSliceVariation>;
+/**
+ * Primary content in SignOut → Primary
+ *
+ */
+interface SignOutSliceDefaultPrimary {
+    /**
+     * Title field in *SignOut → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: sign_out.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *SignOut → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: sign_out.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for SignOut Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `SignOut`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SignOutSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SignOutSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *SignOut*
+ *
+ */
+type SignOutSliceVariation = SignOutSliceDefault;
+/**
+ * SignOut Shared Slice
+ *
+ * - **API ID**: `sign_out`
+ * - **Description**: `SignOut`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SignOutSlice = prismicT.SharedSlice<"sign_out", SignOutSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice, SignOutSliceDefaultPrimary, SignOutSliceDefault, SignOutSliceVariation, SignOutSlice };
     }
 }

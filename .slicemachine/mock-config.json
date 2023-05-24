@@ -10,7 +10,8 @@
         "primary": {}
       }
     },
-    "LogIn": {}
+    "LogIn": {},
+    "SignOut": {}
   },
   "_cts": {
     "homepage": {}

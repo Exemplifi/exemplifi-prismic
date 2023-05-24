@@ -4,12 +4,14 @@ import Landing from './Landing';
 import LogIn from './LogIn';
 import Notification from './Notification';
 import Ratings from './Ratings';
+import SignOut from './SignOut';
 
 export {
 	Landing,
 	LogIn,
 	Notification,
 	Ratings,
+	SignOut,
 };
 
 export const components = {
@@ -17,4 +19,5 @@ export const components = {
 	log_in: LogIn,
 	notification: Notification,
 	ratings: Ratings,
+	sign_out: SignOut,
 };

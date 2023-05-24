@@ -3,7 +3,7 @@
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "landing$a7278879-59ba-4edb-9722-fa9d17178da1",
+        "key": "landing$763515fa-2555-4e20-b4cd-d8f883f1e428",
         "name": "landing",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -15,7 +15,7 @@
                 {
                   "type": "heading1",
                   "content": {
-                    "text": "Hollow"
+                    "text": "Attention"
                   }
                 }
               ]
@@ -26,7 +26,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Eiusmod consectetur magna laborum culpa tempor velit qui ullamco irure irure anim nisi sunt voluptate commodo. Minim fugiat ad elit nisi adipisicing non duis tempor magna et. Cillum adipisicing irure dolore irure consequat amet officia consectetur dolore ullamco eu voluptate enim anim."
+                    "text": "Quis aliquip aute ipsum non sit. Velit irure eiusmod excepteur nisi deserunt labore anim eu incididunt proident dolor tempor ad minim."
                   }
                 }
               ]
@@ -41,7 +41,7 @@
         }
       },
       {
-        "key": "notification$6e207938-05fe-4c0a-94ad-49b1c38e1884",
+        "key": "notification$9645f151-b71d-4fd9-854e-00f55807f8dd",
         "name": "notification",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -53,7 +53,7 @@
                 {
                   "type": "heading1",
                   "content": {
-                    "text": "Short"
+                    "text": "Movie"
                   }
                 }
               ]
@@ -64,7 +64,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Qui dolor nulla voluptate amet cillum proident dolor. Labore sunt dolor ex anim officia aliquip ipsum aute anim deserunt elit in incididunt proident ad."
+                    "text": "Laborum consectetur eu deserunt aliquip nulla mollit laboris ea ut Lorem nisi. Quis consectetur cillum ad mollit labore voluptate."
                   }
                 }
               ]
@@ -73,14 +73,14 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "http://twitter.com"
+                "url": "https://prismic.io"
               }
             },
             "return": {
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "https://prismic.io"
+                "url": "https://slicemachine.dev"
               }
             }
           },
@@ -93,7 +93,7 @@
         }
       },
       {
-        "key": "ratings$a471c0cf-f917-46a0-a6e7-db152f9e99b5",
+        "key": "ratings$ff56d67f-6ee6-4bb2-a9f8-878a0e11d342",
         "name": "ratings",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -101,33 +101,114 @@
           "primary": {
             "satisfied_percent": {
               "__TYPE__": "FieldContent",
-              "value": "middle",
+              "value": "met",
               "type": "Text"
             },
             "satisfied_text": {
               "__TYPE__": "FieldContent",
-              "value": "remember",
+              "value": "castle",
               "type": "Text"
             },
             "neutral_percent": {
               "__TYPE__": "FieldContent",
-              "value": "brass",
+              "value": "draw",
               "type": "Text"
             },
             "neutral_text": {
               "__TYPE__": "FieldContent",
-              "value": "ancient",
+              "value": "slip",
               "type": "Text"
             },
             "unsatisfied_percent": {
               "__TYPE__": "FieldContent",
-              "value": "his",
+              "value": "brief",
               "type": "Text"
             },
             "unsatisfied_text": {
               "__TYPE__": "FieldContent",
-              "value": "directly",
+              "value": "valley",
               "type": "Text"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "log_in$b7c16c6d-2d79-4aff-aec0-f1485bdbf970",
+        "name": "log_in",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Quiet"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Mollit consequat aliqua incididunt ad sit ullamco aute duis nulla et enim et incididunt enim. Duis nostrud esse sunt esse. Reprehenderit minim veniam sit tempor dolore."
+                  }
+                }
+              ]
+            },
+            "button_text": {
+              "__TYPE__": "FieldContent",
+              "value": "nobody",
+              "type": "Text"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "sign_out$6e485504-760d-4759-914b-a3412baf03d8",
+        "name": "sign_out",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Quietly"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Labore consequat dolor in qui. Sit veniam fugiat sint aute nisi sunt."
+                  }
+                }
+              ]
             }
           },
           "items": [
