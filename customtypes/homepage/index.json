@@ -22,10 +22,10 @@
             "log_in": {
               "type": "SharedSlice"
             },
-            "sign_out": {
+            "testimonial": {
               "type": "SharedSlice"
             },
-            "testimonial": {
+            "food_card": {
               "type": "SharedSlice"
             }
           }

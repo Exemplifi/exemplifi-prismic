@@ -24,7 +24,7 @@ interface HomepageDocumentData {
  * Slice for *Home Page → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | RatingsSlice | LogInSlice | SignOutSlice | TestimonialSlice;
+type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | RatingsSlice | LogInSlice | TestimonialSlice | FoodCardSlice;
 /**
  * Home Page document from Prismic
  *
