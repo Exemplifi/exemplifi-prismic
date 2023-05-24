@@ -24,7 +24,7 @@ interface HomepageDocumentData {
  * Slice for *Home Page → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | RatingsSlice | LogInSlice | SignOutSlice;
+type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | RatingsSlice | LogInSlice | SignOutSlice | TestimonialSlice;
 /**
  * Home Page document from Prismic
  *
@@ -351,11 +351,70 @@ type SignOutSliceVariation = SignOutSliceDefault;
  *
  */
 export type SignOutSlice = prismicT.SharedSlice<"sign_out", SignOutSliceVariation>;
+/**
+ * Primary content in Testimonial → Primary
+ *
+ */
+interface TestimonialSliceDefaultPrimary {
+    /**
+     * Title field in *Testimonial → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: testimonial.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Testimonial → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: testimonial.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Author Name field in *Testimonial → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: testimonial.primary.author_name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    author_name: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Testimonial Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Testimonial`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TestimonialSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TestimonialSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Testimonial*
+ *
+ */
+type TestimonialSliceVariation = TestimonialSliceDefault;
+/**
+ * Testimonial Shared Slice
+ *
+ * - **API ID**: `testimonial`
+ * - **Description**: `Testimonial`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TestimonialSlice = prismicT.SharedSlice<"testimonial", TestimonialSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice, SignOutSliceDefaultPrimary, SignOutSliceDefault, SignOutSliceVariation, SignOutSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice, SignOutSliceDefaultPrimary, SignOutSliceDefault, SignOutSliceVariation, SignOutSlice, TestimonialSliceDefaultPrimary, TestimonialSliceDefault, TestimonialSliceVariation, TestimonialSlice };
     }
 }

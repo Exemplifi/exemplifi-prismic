@@ -5,6 +5,7 @@ import LogIn from './LogIn';
 import Notification from './Notification';
 import Ratings from './Ratings';
 import SignOut from './SignOut';
+import Testimonial from './Testimonial';
 
 export {
 	Landing,
@@ -12,6 +13,7 @@ export {
 	Notification,
 	Ratings,
 	SignOut,
+	Testimonial,
 };
 
 export const components = {
@@ -20,4 +22,5 @@ export const components = {
 	notification: Notification,
 	ratings: Ratings,
 	sign_out: SignOut,
+	testimonial: Testimonial,
 };

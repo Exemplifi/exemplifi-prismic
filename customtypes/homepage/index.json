@@ -24,6 +24,9 @@
             },
             "sign_out": {
               "type": "SharedSlice"
+            },
+            "testimonial": {
+              "type": "SharedSlice"
             }
           }
         }
