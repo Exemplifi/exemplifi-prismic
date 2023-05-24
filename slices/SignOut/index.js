@@ -7,71 +7,53 @@ import { PrismicRichText } from '@prismicio/react'
  * @param { SignOutProps }
  */
 const SignOut = ({ slice }) => ( 
- 
- 
-      <div class="min-w-screen relative flex min-h-screen flex-col items-center justify-center bg-white pt-4"
-        x-data="{ open: true }">
-        <div class="">
-          <button class="rounded-lg bg-blue-50 px-5 py-2.5 text-sm font-medium text-blue-500 hover:bg-blue-100 hover:text-blue-600"> Show Modal </button>
-        </div>
-        <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
-          x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
-          x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-          x-description="Background backdrop, show/hide based on modal state."
-          class="fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity"></div>
+  <div>
+  <div class="max-w-2xl mx-auto">
+  
+      <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="default-modal">
+      Toggle modal
+      </button>
 
-
-        <div class="fixed overflow-y-auto">
-          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-            <div x-show="open" x-transition:enter="ease-out duration-300"
-              x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-              x-transition:leave="ease-in duration-200"
-              x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-              x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              x-description="Modal panel, show/hide based on modal state."
-              class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
-               >
-              <div class="p-4 sm:p-10 text-center overflow-y-auto"> 
-                <span class="mb-4 inline-flex justify-center items-center w-[62px] h-[62px] rounded-full border-4 border-yellow-50 bg-yellow-100 text-yellow-500">
-                          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-                          </svg>
-                          </span>
-               
       
-                <span className="mb-2 text-2xl font-bold text-gray-800">
-                {
-                  slice.primary.title ?
-                  <PrismicRichText field={slice.primary.title}/>
-                  : <h2>Template slice, update me!</h2>
-                }
-              </span>
-                <p class="text-gray-500">
-                              {
+      <div id="default-modal" data-modal-show="true" aria-hidden="true" class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+          <div class="relative w-full max-w-2xl px-4 h-full md:h-auto">
+              
+              <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                  
+                  <div class="flex items-start justify-between p-5 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-gray-900 text-xl lg:text-2xl font-semibold dark:text-white">
+                        {
+                          slice.primary.title ?
+                          <PrismicRichText field={slice.primary.title}/>
+                          : <h2>Template slice, update me!</h2>
+                        }
+                      </h3>
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="default-modal">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                      </button>
+                  </div>
+                  
+                  <div class="p-6 space-y-6">
+                  {
                     slice.primary.description ?
                     <PrismicRichText field={slice.primary.description}/>
                     : <p>start by editing this slice from inside Slice Machine!</p>
                   }
-                </p>
-
-                <div class="mt-6 flex justify-center gap-x-4">
-                  <a class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm"
-                    href="javascript:;">
-                    Sign out
-                  </a>
-                  <button  type="button" class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm">
-                                            Cancel
-                              </button>
-                </div>
+                  </div> 
+                  <div class="flex space-x-2 items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-600">
+                      <button data-modal-toggle="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign Out</button>
+                      <button data-modal-toggle="default-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">Cancel</button>
+                  </div>
               </div>
-            </div>
-
           </div>
-        </div> 
-        </div>
-   
+      </div>
+
+      <p class="mt-5">  </p>
+  </div>
+
+<script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
+
+</div>
 )
 
 export default SignOut
