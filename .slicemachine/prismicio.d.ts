@@ -86,6 +86,65 @@ type LandingSliceVariation = LandingSliceDefault;
  */
 export type LandingSlice = prismicT.SharedSlice<"landing", LandingSliceVariation>;
 /**
+ * Primary content in LogIn → Primary
+ *
+ */
+interface LogInSliceDefaultPrimary {
+    /**
+     * Title field in *LogIn → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: log_in.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *LogIn → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: log_in.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Button Text field in *LogIn → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: log_in.primary.button_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    button_text: prismicT.KeyTextField;
+}
+/**
+ * Default variation for LogIn Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `LogIn`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogInSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<LogInSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *LogIn*
+ *
+ */
+type LogInSliceVariation = LogInSliceDefault;
+/**
+ * LogIn Shared Slice
+ *
+ * - **API ID**: `log_in`
+ * - **Description**: `LogIn`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogInSlice = prismicT.SharedSlice<"log_in", LogInSliceVariation>;
+/**
  * Primary content in Notification → Primary
  *
  */
@@ -248,6 +307,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice };
     }
 }
