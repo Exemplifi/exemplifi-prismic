@@ -19,9 +19,9 @@ const Testimonial = ({ slice }) => (
         <PrismicRichText field={slice.primary.title} />
       </span>
 
-      <p class="mt-2 text-gray-600">
+      <span class="mt-2 text-gray-600">
         <PrismicRichText field={slice.primary.description} />
-      </p>
+      </span>
     </div>
     <div class="flex justify-end mt-4">
       <a href="#" class="text-xl font-medium text-indigo-500">
