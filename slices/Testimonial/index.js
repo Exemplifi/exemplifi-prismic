@@ -7,6 +7,7 @@ import { PrismicRichText } from "@prismicio/react";
  * @param { TestimonialProps }
  */
 const Testimonial = ({ slice }) => (
+  <section>
   <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
     <div class="flex justify-center md:justify-end -mt-16">
       <img
@@ -29,6 +30,7 @@ const Testimonial = ({ slice }) => (
       </a>
     </div>
   </div>
+  </section>
 );
 
 export default Testimonial;
