@@ -12,7 +12,8 @@
     },
     "LogIn": {},
     "SignOut": {},
-    "Testimonial": {}
+    "Testimonial": {},
+    "FoodCard": {}
   },
   "_cts": {
     "homepage": {}

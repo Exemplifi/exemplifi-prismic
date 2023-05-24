@@ -37,6 +37,65 @@ type HomepageDocumentDataSlicesSlice = LandingSlice | NotificationSlice | Rating
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 export type AllDocumentTypes = HomepageDocument;
 /**
+ * Primary content in FoodCard → Primary
+ *
+ */
+interface FoodCardSliceDefaultPrimary {
+    /**
+     * Title field in *FoodCard → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: food_card.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *FoodCard → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: food_card.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Rate field in *FoodCard → Primary*
+     *
+     * - **Field Type**: Number
+     * - **Placeholder**: *None*
+     * - **API ID Path**: food_card.primary.rate
+     * - **Documentation**: https://prismic.io/docs/core-concepts/number
+     *
+     */
+    rate: prismicT.NumberField;
+}
+/**
+ * Default variation for FoodCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FoodCard`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FoodCardSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FoodCardSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *FoodCard*
+ *
+ */
+type FoodCardSliceVariation = FoodCardSliceDefault;
+/**
+ * FoodCard Shared Slice
+ *
+ * - **API ID**: `food_card`
+ * - **Description**: `FoodCard`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FoodCardSlice = prismicT.SharedSlice<"food_card", FoodCardSliceVariation>;
+/**
  * Primary content in Landing → Primary
  *
  */
@@ -415,6 +474,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice, SignOutSliceDefaultPrimary, SignOutSliceDefault, SignOutSliceVariation, SignOutSlice, TestimonialSliceDefaultPrimary, TestimonialSliceDefault, TestimonialSliceVariation, TestimonialSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, FoodCardSliceDefaultPrimary, FoodCardSliceDefault, FoodCardSliceVariation, FoodCardSlice, LandingSliceDefaultPrimary, LandingSliceDefault, LandingSliceVariation, LandingSlice, LogInSliceDefaultPrimary, LogInSliceDefault, LogInSliceVariation, LogInSlice, NotificationSliceDefaultPrimary, NotificationSliceDefault, NotificationSliceVariation, NotificationSlice, RatingsSliceDefaultPrimary, RatingsSliceDefault, RatingsSliceVariation, RatingsSlice, SignOutSliceDefaultPrimary, SignOutSliceDefault, SignOutSliceVariation, SignOutSlice, TestimonialSliceDefaultPrimary, TestimonialSliceDefault, TestimonialSliceVariation, TestimonialSlice };
     }
 }
